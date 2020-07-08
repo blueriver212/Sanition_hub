@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+    {% block title %}Stats{% endblock %}
+    {% block content %}
+    <h1>Stats</h1>
+
+    <h3> General Info</h3>
+    {% for datasets in stats %}
+        <div class="statsArea">
+        {% for key, value in datasets.items %}
+            <p>Lorem ipsum dolor sit amet, {{value}} consectetur adipiscing elit, sed do eiusmod {{key}} tempor incididunt ut labore et dolore magna aliqua. Quam pellentesque nec nam aliquam sem et tortor consequat id. Sit amet luctus venenatis lectus magna.</p>
+            <!-- <h3> {{key}} is equal to {{value}} </h3>     -->
+        {% endfor %}
+        </div>
+    <h3>Detailed Info</h3>
+        
+    {% endfor %}
+    {% endblock %}
