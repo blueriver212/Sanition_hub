@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('dateEntrance', models.DateField(auto_now_add=True, verbose_name='Date of Creation')),
                 ('profilePic', stdimage.models.StdImageField(upload_to='', verbose_name='Profile Picture')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
-                ('organisation', models.ForeignKey(blank=True, null=True, on_delete='SET_NULL', to='SanitationHub.Organisation')),
+                ('organisation', models.ForeignKey(blank=True, null=True, on_delete=models.CASCADE, to='SanitationHub.Organisation')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
             ],
             options={
@@ -78,7 +78,7 @@ class Migration(migrations.Migration):
                 ('ipAddress', models.GenericIPAddressField(verbose_name='IpAdd')),
                 ('latitude', models.FloatField(blank=True, null=True, verbose_name='latitude')),
                 ('longitude', models.FloatField(blank=True, null=True, verbose_name='longitude')),
-                ('organisation', models.ForeignKey(blank=True, null=True, on_delete='cascade', related_name='+', to='SanitationHub.Organisation')),
+                ('organisation', models.ForeignKey(blank=True, null=True, on_delete=models.CASCADE, related_name='+', to='SanitationHub.Organisation')),
             ],
         ),
     ]
