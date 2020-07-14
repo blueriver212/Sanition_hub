@@ -74,11 +74,14 @@ class AppendixView(LoginRequiredMixin,TemplateView):
 class MapsView(LoginRequiredMixin,TemplateView):
     template_name = 'maps.html'
 
+    
     def get_context_data(self, **kwargs):
         context = super(MapsView, self).get_context_data(**kwargs)
-        context['isHubMember'] = getCredentials(self.request.user,showMaps)
+        
+        # showMaps is not complete and hence the maps tab does not yet work, I think 
+        context["isHubMember"] = getCredentials(self.request.user,showMaps)
         return context
-
+    
 
 class StatsView(LoginRequiredMixin,TemplateView):
     template_name = 'stats.html'

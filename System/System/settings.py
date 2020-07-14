@@ -25,7 +25,7 @@ SECRET_KEY = 'z(k(ss7mvs8v2=l3^n)yjtzdens9n@3^a)95lb3ma4_4c(3eln'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['86.132.28.23', '127.0.0.1']
 
 
 # Application definition
@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'stdimage',
+    'test',
+
+
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,15 +84,30 @@ WSGI_APPLICATION = 'System.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Sanitationhub',
         'USER': 'root',
-        #'PASSWORD' : 'Toilet2019',
-        'PASSWORD' : '2727indigo',
+        'PASSWORD' : 'Toilet2019',
+        #'PASSWORD' : '2727indigo',
+        #'HOST': 'localhost',
+        'HOST': '/var/run/mysql'
     }
-}
+} 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'USER': 'root',
+        'PASSWORD' : '',
+        #'PASSWORD' : '2727indigo',
+        'HOST': 'localhost',
+        #'HOST': '/var/run/mysql'
+    }
+} 
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -136,6 +154,7 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
 AUTH_USER_MODEL = 'SanitationHub.User'
+
 
 MAX_UPLOAD_SIZE = 10485760
 FILE_UPLOAD_TYPE = 'csv'
