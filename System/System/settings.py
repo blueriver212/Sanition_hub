@@ -25,7 +25,7 @@ SECRET_KEY = 'z(k(ss7mvs8v2=l3^n)yjtzdens9n@3^a)95lb3ma4_4c(3eln'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['86.132.28.23', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -100,9 +100,9 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'sanitation_hub_db',
         'USER': 'root',
-        'PASSWORD' : '',
+        'PASSWORD' : 'fred123?',
         #'PASSWORD' : '2727indigo',
         'HOST': 'localhost',
         #'HOST': '/var/run/mysql'
