@@ -4,7 +4,6 @@ from chartjs.views.lines import BaseLineChartView #> CMD does not accept chartjs
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.contrib.auth import login
 from django.shortcuts import redirect, get_object_or_404
 
@@ -73,7 +72,6 @@ class AppendixView(LoginRequiredMixin,TemplateView):
 
 class MapsView(LoginRequiredMixin,TemplateView):
     template_name = 'maps.html'
-
     
     def get_context_data(self, **kwargs):
         context = super(MapsView, self).get_context_data(**kwargs)
@@ -82,6 +80,8 @@ class MapsView(LoginRequiredMixin,TemplateView):
         context["isHubMember"] = getCredentials(self.request.user,showMaps)
         return context
     
+def WebsiteReturn(request):
+    return redirect("https://gatherhub.org/")
 
 class StatsView(LoginRequiredMixin,TemplateView):
     template_name = 'stats.html'

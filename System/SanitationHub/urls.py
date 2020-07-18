@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib import admin
 
-from .views import ContactView, IndexView, SignUpView, MapsView, AppendixView, StatsView,ChartsView, DatasetUploadView, PlotView, ProfileView
+from .views import ContactView, IndexView, SignUpView, MapsView, AppendixView, StatsView,ChartsView, DatasetUploadView, PlotView, ProfileView, WebsiteReturn
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -14,6 +14,7 @@ urlpatterns = [
     path('appendix/', AppendixView.as_view(), name='appendix'),
     path('stats/', StatsView.as_view(), name='stats'),
     path('charts/', ChartsView.as_view(), name='charts'),
+    path('home_website/', WebsiteReturn , name='home_website'),
     path('plotcharts/', PlotView.as_view(), name='dados'),
     path('upload/', DatasetUploadView.as_view(), name='upload' ),
     path('profile/',ProfileView.as_view(), name='edit_profile')
